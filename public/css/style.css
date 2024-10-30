@@ -1,4 +1,62 @@
 body {
     background-color: #f8f9fa;
     font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+.container {
+    width: 95%;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 700px;
+    padding: 20px;
+    text-align: center;
+}
+
+#top-row {
+    height: 25%;
+}
+
+#bottom-row {
+    height: 75%;
+}
+
+#flight-details {
+    width: 25%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(176, 96, 96);
+}
+
+#robot-communication {
+    width: 36%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(149, 90, 164);
+}
+
+#emergency {
+    width: 36%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(121, 176, 96);
+}
+
+#navigation-info {
+    width: 25%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(164, 125, 90);
+}
+
+#map {
+    width: 73%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(96, 123, 176);
 }
