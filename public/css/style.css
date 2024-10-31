@@ -4,7 +4,7 @@ body {
     height: 100%;
 }
 
-.container {
+#app-components {
     width: 95%;
     border: 2px solid black;
     border-radius: 10px;
@@ -60,4 +60,9 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgb(96, 123, 176);
+}
+
+#plot {
+    width: 80%;
+    align-items: center;
 }
