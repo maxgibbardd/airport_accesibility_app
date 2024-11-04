@@ -48,20 +48,22 @@
                 </div>
 
                 <!-- Rest Stops -->
-                <!-- <div class="card" id="rest-stops">
+                <div class="card" id="rest-stops">
                     <div class="card-header">
-                        Rest Stops
+                        <b>Rest Stops</b>
                     </div>
-                    <button class="button" id="stop-A">Stop A</button>
-                    <button class="button" id="stop-B">Stop B</button>
-                    <button class="button" id="stop-C">Stop C</button>
-                    <button class="button" id="stop-D">Stop D</button>
-                </div> -->
+                    <div class="button-container">
+                        <button class="nav-button" id="stop-A" onclick="selectRestStop('stop-A')">Shake Shack</button>
+                        <button class="nav-button" id="stop-B" onclick="selectRestStop('stop-B')">Bathroom</button>
+                        <button class="nav-button" id="stop-C" onclick="selectRestStop('stop-C')">Help Desk</button>
+                        <button class="nav-button" id="stop-D" onclick="selectRestStop('stop-D')">Lounge</button>
+                    </div>
+                </div>
 
                 <!-- End Gates -->
                 <div class="card" id="end-gates">
                     <div class="card-header">
-                        End Gates
+                        <b>End Gates</b>
                     </div>
                     <div class="button-container">
                         <button class="nav-button" id="gate-E" onclick="selectGate('gate-E', false)">Gate E</button>
