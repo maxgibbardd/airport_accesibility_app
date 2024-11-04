@@ -4,64 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airport Accessibility App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <h1 class="mt-5 text-center">Airport Accessibility App!</h1>
 
-    <div class="container">
-        <row class="row" id="top-row">
+    <div class="container" id="app-components">
+        <div class="row" id="top-row">
             <div class="container-flight-details" id="flight-details">
                 Flight Details
-
-                <!--
-                    • Terminal
-                    • Gate
-                    • Time (get real updated time)
-                    • Airline
-                -->
+                <!-- Terminal, Gate, Time, Airline -->
             </div>
             <div class="container-robot-communication" id="robot-communication">
                 Robot Communication
-
-                <!--
-                    • Stop
-                    • Start
-                    • Speed up/Slow Down
-                -->
+                <!-- Stop, Start, Speed up/Slow Down -->
             </div>
             <div class="container-emergency" id="emergency">
                 Emergency
-
-                <!--
-                    • Contacting SOS (911)
-                -->
+                <!-- Contacting SOS (911) -->
             </div>
-        </row>
+        </div>
 
-        <row class="row" id="bottom-row">
-            <div class="container-navigation-info" id="navigation-info">
-                Navigation Info
+        <div class="row" id="bottom-row">
+            <div class="container" id="navigation-info">
 
-                <!--
-                    • Start Position 
-                    • End Position
-                    • Stop(s) along the way
-                -->
+                <!-- Start Gates -->
+                <div class="card" id="start-gates">
+                    <div class="card-header">
+                        <b>Start Gates</b>
+                    </div>
+                    <div class="button-container">
+                        <button class="nav-button" id="gate-A" onclick="selectGate('gate-A', true)">Gate A</button>
+                        <button class="nav-button" id="gate-B" onclick="selectGate('gate-B', true)">Gate B</button>
+                        <button class="nav-button" id="gate-C" onclick="selectGate('gate-C', true)">Gate C</button>
+                        <button class="nav-button" id="gate-D" onclick="selectGate('gate-D', true)">Gate D</button>
+                    </div>
+                </div>
+
+                <!-- Rest Stops -->
+                <div class="card" id="rest-stops">
+                    <div class="card-header">
+                        <b>Rest Stops</b>
+                    </div>
+                    <div class="button-container">
+                        <button class="nav-button" id="stop-A" onclick="selectRestStop('stop-A')">Shake Shack</button>
+                        <button class="nav-button" id="stop-B" onclick="selectRestStop('stop-B')">Bathroom</button>
+                        <button class="nav-button" id="stop-C" onclick="selectRestStop('stop-C')">Help Desk</button>
+                        <button class="nav-button" id="stop-D" onclick="selectRestStop('stop-D')">Lounge</button>
+                    </div>
+                </div>
+
+                <!-- End Gates -->
+                <div class="card" id="end-gates">
+                    <div class="card-header">
+                        <b>End Gates</b>
+                    </div>
+                    <div class="button-container">
+                        <button class="nav-button" id="gate-E" onclick="selectGate('gate-E', false)">Gate E</button>
+                        <button class="nav-button" id="gate-F" onclick="selectGate('gate-F', false)">Gate F</button>
+                        <button class="nav-button" id="gate-G" onclick="selectGate('gate-G', false)">Gate G</button>
+                        <button class="nav-button" id="gate-H" onclick="selectGate('gate-H', false)">Gate H</button>
+                    </div>
+                </div>
+
+                <!-- Reset Button -->
+                <div class="text-center mt-3">
+                    <button class="btn btn-danger" onclick="resetPlot()">Reset</button>
+                </div>
             </div>
             <div class="container-map" id="map">
-                Map
-
-                <!--
-                    • Start gates on left (a, b, c, d)
-                    • Stops in the middle (1, 2, 3, 4)
-                    • End gates on right  (e, f, g, h)
-                -->
+                <!-- Map will render here -->
             </div>
-        </row>
+        </div>
     </div>
 
-    
+    <!-- Linking to public/js/plot.js -->
+    <script src="/js/plot.js"></script>
 </body>
 </html>
