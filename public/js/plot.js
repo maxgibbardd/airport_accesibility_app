@@ -122,7 +122,7 @@ function updatePlot() {
         y: [1, 2, 3, 4],
         marker: { color: ['#1E88E5', '#1E88E5', '#1E88E5', '#1E88E5'], size: [12, 12, 12, 12] },
         mode: 'markers+text',
-        text: ['Stop D', 'Stop C', 'Stop B', 'Stop A'],
+        text: ['Lounge', 'Help Desk', 'Bathroom', 'Shake Shack'],
         textposition: 'top',
         hoverinfo: 'none'
     };
