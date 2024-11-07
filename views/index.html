@@ -16,6 +16,14 @@
     <h1 class="mt-5 text-center">Airport Accessibility App!</h1>
 
     <div class="container" id="app-components">
+        <div class="row" id="time_date">
+            <div class="col d-flex justify-content-start fs-5" id="current_time">
+                Current Time: <span id="time_display"></span>
+            </div>
+            <div class="col d-flex justify-content-end fs-5" id="current_date">
+                <span id="date_display"></span>
+            </div>
+        </div>
         <div class="row" id="top-row">
             <div class="container-flight-details" id="flight-details">
                 <h3>Flight Details</h3>
@@ -100,7 +108,8 @@
         </div>
     </div>
 
-    <!-- Linking to public/js/plot.js -->
+    <!-- Linking to public/js/plot.js and time.js -->
     <script src="/js/plot.js"></script>
+    <script src="/js/time.js"></script>
 </body>
 </html>

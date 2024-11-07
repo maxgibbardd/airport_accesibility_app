@@ -9,9 +9,34 @@ body {
     border: 2px solid black;
     border-radius: 10px;
     height: 700px;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
     color: white;
     font-size: 20px;
+}
+
+#current_time {
+    background-color: #ffffff;
+    color: black;
+    font-size: 1.25rem; /* Increase font size for visibility */
+    font-weight: bold;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: left;
+}
+
+#current_date {
+    background-color: #ffffff;
+    color: black;
+    font-size: 1.25rem; /* Increase font size for visibility */
+    font-weight: bold;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: right;
 }
 
 #top-row {
@@ -105,7 +130,7 @@ body {
 
 #emergency {
     padding-top: 10px;
-    width: 36%;
+    width: 36.5%;
     margin: 5px;
     border: 1px solid black;
     border-radius: 5px;
@@ -132,6 +157,7 @@ body {
 #navigation-info {
     padding-top: 50px;
     width: 25%;
+    height: 97%;
     margin: 5px;
     border: 1px solid black;
     border-radius: 5px;
@@ -140,7 +166,8 @@ body {
 }
 
 #map {
-    width: 73%;
+    width: 73.3%;
+    height: 97%;
     margin: 5px;
     border: 1px solid black;
     border-radius: 5px;
