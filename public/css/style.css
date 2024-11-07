@@ -16,10 +16,11 @@ body {
 
 #top-row {
     height: 25%;
+    margin-bottom: 20px;
 }
 
 #bottom-row {
-    height: 75%;
+    height: 70%;
 }
 
 #flight-details {
@@ -30,10 +31,41 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgb(176, 96, 96);
+    overflow: auto;
 }
 
 #robot-communication {
-    padding-top: 50px;
+    padding-top: 10px;
+    width: 36%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(149, 90, 164);
+    justify-content: flex-start;
+}
+
+.robot-start-stop-button {
+    background-color: #fefefe; 
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.robot-button:hover{
+    background-color: #cdf5fd;
+}
+
+.robot-speed-button {
+    background-color: #cdf5fd;
+    font-size: 30px;
+}
+
+.container-robot-communication {
+    padding-top: 10px;
     width: 36%;
     margin: 5px;
     border: 1px solid black;
@@ -41,13 +73,55 @@ body {
     background-color: rgb(149, 90, 164);
 }
 
+.robot-start-stop-button {
+    background-color: #fefefe; 
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 5px; /* Space between buttons */
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between speed control elements */
+}
+
+.speed-label {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.speed-label {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 #emergency {
-    padding-top: 50px;
+    padding-top: 10px;
     width: 36%;
     margin: 5px;
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgb(121, 176, 96);
+}
+
+.emergency-button{
+    background-color: rgb(202, 38, 38); 
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 33px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 5px;
 }
 
 #navigation-info, #map {

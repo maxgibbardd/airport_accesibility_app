@@ -18,16 +18,32 @@
     <div class="container" id="app-components">
         <div class="row" id="top-row">
             <div class="container-flight-details" id="flight-details">
-                Flight Details
+                <h3>Flight Details</h3>
                 <!-- Terminal, Gate, Time, Airline -->
+                <ul class="list-group">
+                    <li><strong>Terminal:</strong> A</li>
+                    <li><strong>Gate:</strong> D</li>
+                    <li><strong>Flight Number:</strong> AA1234</li>
+                    <li><strong>Airline:</strong> American Airlines</li>
+                </ul>
             </div>
             <div class="container-robot-communication" id="robot-communication">
-                Robot Communication
-                <!-- Stop, Start, Speed up/Slow Down -->
+                <h3>Robot Communication</h3>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="robot-start-stop-button" onclick="startRobot()">Start</button>
+                    <button class="robot-start-stop-button" onclick="stopRobot()">Stop</button>
+                </div>
+                <div class="speed-control d-flex justify-content-center align-items-center mt-2">
+                    <button class="robot-speed-button" id="slow-down">&#9660</button>
+                    <span class="speed-label">Speed</span>
+                    <button class="robot-speed-button" id="speed-up">&#9650</button>
+                </div>
             </div>
             <div class="container-emergency" id="emergency">
-                Emergency
+                <h3>Emergency</h3>
                 <!-- Contacting SOS (911) -->
+                <button class="emergency-button" onclick="callEmergency()">Call 911</button>
+                <button class="emergency-button" onclick="findNearestExit()">Find Nearest Exit</button>
             </div>
         </div>
 
