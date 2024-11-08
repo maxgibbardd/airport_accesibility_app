@@ -161,7 +161,7 @@ function updatePlot() {
             x: [gatePositions[selectedStartGate].x, gatePositions[selectedRestStop].x],
             y: [gatePositions[selectedStartGate].y, gatePositions[selectedRestStop].y],
             mode: 'lines',
-            line: { color: 'rgb(66, 66, 66)', width: 3 }
+            line: { color: 'black', width: 3 }
         });
     }
 
@@ -170,14 +170,14 @@ function updatePlot() {
             x: [gatePositions[selectedRestStop].x, gatePositions[selectedEndGate].x],
             y: [gatePositions[selectedRestStop].y, gatePositions[selectedEndGate].y],
             mode: 'lines',
-            line: { color: 'rgb(66, 66, 66)', width: 3 }
+            line: { color: 'black', width: 3 }
         });
     } else if (selectedStartGate && selectedEndGate && !selectedRestStop) {
         lineData.push({
             x: [gatePositions[selectedStartGate].x, gatePositions[selectedEndGate].x],
             y: [gatePositions[selectedStartGate].y, gatePositions[selectedEndGate].y],
             mode: 'lines',
-            line: { color: 'rgb(66, 66, 66)', width: 3 }
+            line: { color: 'black', width: 3 }
         });
     }
 
