@@ -36,19 +36,25 @@
                 </ul>
             </div>
             <div class="container-robot-communication" id="robot-communication">
-                <h3>Robot Communication</h3>
-                <div class="d-flex justify-content-between align-items-center">
-                    <button class="robot-start-stop-button" onclick="startRobot()">Start</button>
-                    <button class="robot-start-stop-button" onclick="stopRobot()">Stop</button>
+                <div class="row align-items-center">
+                    <h3>Robot Communication</h3>
                 </div>
-                <div class="speed-control d-flex justify-content-center align-items-center mt-2">
-                    <button class="robot-speed-button" id="slow-down">&#9660</button>
-                    <span class="speed-label">Speed</span>
-                    <button class="robot-speed-button" id="speed-up">&#9650</button>
+                <div class="row">
+                    <div class="col-3">
+                        <button class="btn btn-dark" onclick="toggleMovement()">Start/stop</button>
+                    </div>
+                    <div class="col-4" id="speed-control">
+                        <div class="row">
+                            <span class="speed-label">Speed: </span>
+                        </div>
+                        <div>
+                            <button class="btn btn-dark" id="slow-down" onclick="decreaseSpeed()">&#9660</button>
+                            <button class="btn btn-dark" id="speed-up" onclick="increaseSpeed()">&#9650</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="container-emergency" id="emergency">
-                <h3>Emergency</h3>
                 <!-- Contacting SOS (911) -->
                 <button class="emergency-button" onclick="callEmergency()">Call 911</button>
                 <button class="emergency-button" onclick="findNearestExit()">Find Nearest Exit</button>

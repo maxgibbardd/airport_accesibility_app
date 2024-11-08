@@ -65,6 +65,9 @@ let selectedStartGate = null;
 let selectedRestStop = null; 
 let selectedEndGate = null;
 
+// Speed Variable
+let speed = 0;
+
 function selectGate(id, isStartGate) {
     if (isStartGate) {
         if (selectedStartGate) {
@@ -209,6 +212,25 @@ function resetPlot() {
         document.getElementById(id).style.backgroundColor = "black";
     });
     updatePlot();
+}
+
+function increaseSpeed(){
+    if (speed < 5) {
+        speed = speed + 1;
+    }
+    updateSpeed();
+}
+
+function decreaseSpeed(){
+    if (speed > 0) {
+        speed = speed - 1;
+    }
+    updateSpeed();
+}
+
+function updateSpeed() {
+    let speed_display = document.getElementsByClassName("speed-label");
+    speed_display[0].textContent = "Speed: " + speed + "mph";
 }
 
 document.addEventListener('DOMContentLoaded', updatePlot);
