@@ -97,13 +97,26 @@
                     </div>
                 </div>
 
-                <!-- Reset Button -->
-                <div class="text-center mt-3">
-                    <button class="btn btn-danger" onclick="resetPlot()">Reset</button>
+                <div class="row text-center" id="nav-action-buttons">
+                    <!-- Reset Button -->
+                    <div class="col-4">
+                        <button class="btn btn-secondary" onclick="resetPlot()">Reset</button>
+                    </div>
+
+                    <!-- Calculate Distance Button-->
+                    <div class="col-4">
+                        <button class="btn btn-secondary" onclick="calculateDistance()">Calculate</button>
+                    </div>
+
+                    <!-- Start Button -->
+                    <div class="col-4">
+                        <button class="btn btn-secondary" onclick="StartNavigation()">Start</button>
+                    </div>
                 </div>
             </div>
             <div class="container-map" id="map">
                 <!-- Map will render here -->
+                
             </div>
         </div>
     </div>

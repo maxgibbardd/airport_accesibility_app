@@ -55,7 +55,7 @@ body {
     padding: 5px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: rgb(176, 96, 96);
+    background-color: rgb(69, 69, 69);
     overflow: auto;
 }
 
@@ -65,8 +65,17 @@ body {
     margin: 5px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: rgb(149, 90, 164);
+    background-color: rgb(69, 69, 69);
     justify-content: flex-start;
+}
+
+#emergency {
+    padding-top: 10px;
+    width: 36.5%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(69, 69, 69);
 }
 
 .robot-start-stop-button {
@@ -126,15 +135,6 @@ body {
     color: white;
     font-size: 16px;
     font-weight: bold;
-}
-
-#emergency {
-    padding-top: 10px;
-    width: 36.5%;
-    margin: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(121, 176, 96);
 }
 
 .emergency-button{
