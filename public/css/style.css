@@ -137,48 +137,20 @@ body {
     font-weight: bold;
 }
 
-.emergency-button{
-    background-color: rgb(202, 38, 38); 
-    border: 1px solid black;
-    color: rgb(0, 0, 0);
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 33px;
+#emergency-button{
+    height: 100%;
+    width: 50%;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-right: 5px;
-}
-
-#navigation-info, #map {
-    height: 100%;
-    overflow: hidden;
-}
-
-#navigation-info {
-    padding-top: 50px;
-    width: 25%;
-    height: 97%;
-    margin: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(223, 223, 223);
-    font-size: 15px;
-}
-
-#map {
-    width: 73.3%;
-    height: 97%;
-    margin: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(223, 223, 223);
+    margin: 10px;
 }
 
 #start-gates, 
 #rest-stops,
 #end-gates {
     background-color:rgb(223, 223, 223);
-    border: 3px ridge rgb(80, 60, 43);
+    /* border: 3px ridge rgb(80, 60, 43); */
+    border: none;
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
@@ -205,4 +177,46 @@ body {
 
 #rest-stops .nav-button {
     height: 65px;
+}
+
+#speed-btn {
+    height: 100%;
+    width: 100%;
+}
+
+#navigation-info, #nav-display {
+    height: 100%;
+    overflow: hidden;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    height: 95%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+    font-size: 15px;
+}
+
+#navigation-info {
+    width: 25%;
+}
+
+#nav-display {
+    display: flex; /* Ensure elements inside are laid out in a row */
+    align-items: flex-start;
+    width: 73%;
+}
+
+#map {
+    flex: 4;
+    height: 100%;
+    overflow: hidden;
+}
+
+#other-info {
+    flex: 1;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    align-items: flex-start;
 }

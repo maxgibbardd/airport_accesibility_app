@@ -1,65 +1,3 @@
-// // Wait until the DOM is fully loaded to call make_plot
-document.addEventListener('DOMContentLoaded', make_plot);
-
-function make_plot() {
-
-    // Start gate data points, all using large dots and color-blind accessible colors
-    const start_gates = {
-        x: [1, 1, 1, 1],
-        y: [1, 2, 3, 4],
-        marker: { color: '#D81B60', size: 12},
-        mode: 'markers+text',
-        text: ['Gate D', 'Gate C', 'Gate B', 'Gate A'],
-        textposition: 'top',
-        hoverinfo: 'none'
-    }
-
-    // Rest stop data points, all using large dots and color-blind accessible colors
-    // const rest_stops = {
-    //     x: [2, 2, 2, 2],
-    //     y: [1, 2, 3, 4],
-    //     marker: { color: '#1E88E5', size: 12},
-    //     mode: 'markers+text',
-    //     text: ['Stop D', 'Stop C', 'Stop B', 'Stop A'],
-    //     textposition: 'top',
-    //     hoverinfo: 'none'
-    // }
-
-    // End gate data points, all using large dots and color-blind accessible colors
-    const end_gates = {
-        x: [3, 3, 3, 3],
-        y: [1, 2, 3, 4],
-        marker: { color: '#FFC107', size: 12},
-        mode: 'markers+text',
-        text: ['Gate H', 'Gate G', 'Gate F', 'Gate E'],
-        textposition: 'top',
-        hoverinfo: 'none'
-    }
-
-    const data = [start_gates, rest_stops, end_gates];
-
-    // Remove the grid, axis lines, and values on axes
-    const layout = {
-        title: 'Map of Airport',
-        showlegend: false,
-        xaxis: {
-            showgrid: false,
-            showline: false,
-            zeroline: false,
-            showticklabels: false
-        },
-        yaxis: {
-            showgrid: false,
-            showline: false,
-            zeroline: false,
-            showticklabels: false
-        }
-    };
-
-    // Plotting the chart in the 'plot' div
-    Plotly.newPlot('map', data, layout);
-}
-
 // Initialize variables to store selected start gates, rest stops, and end gates
 let selectedStartGate = null;
 let selectedRestStop = null; 
@@ -67,6 +5,9 @@ let selectedEndGate = null;
 
 // Speed Variable
 let speed = 0;
+
+// Lock Status
+let lock_status = 0;
 
 function selectGate(id, isStartGate) {
     if (isStartGate) {
@@ -189,15 +130,20 @@ function updatePlot() {
     const layout = {
         title: {
             text: 'Map of Airport',
-            font: { size: 24, color: '#333', family: 'Arial', weight: 'bold' },
-            x: 0.5, // Center the title
-            xanchor: 'center'
+            font: { size: 18, color: '#333', family: 'Arial', weight: 'bold' },
+            x: 0.5,
+            xanchor: 'center',
+            y: 0.95
         },
         showlegend: false,
         paper_bgcolor: 'rgb(223, 223, 223)', // Background color of the entire plot
         plot_bgcolor: 'rgb(223, 223, 223)',  // Background color of the plotting area
         xaxis: { showgrid: false, showline: false, zeroline: false, showticklabels: false },
-        yaxis: { showgrid: false, showline: false, zeroline: false, showticklabels: false }
+        yaxis: { showgrid: false, showline: false, zeroline: false, showticklabels: false },
+        margin: {
+            t: 60,
+            b: 20
+        }
     };
 
     Plotly.newPlot('map', data, layout);
@@ -231,6 +177,10 @@ function decreaseSpeed(){
 function updateSpeed() {
     let speed_display = document.getElementsByClassName("speed-label");
     speed_display[0].textContent = "Speed: " + speed + "mph";
+}
+
+function calculateDistance() {
+    
 }
 
 document.addEventListener('DOMContentLoaded', updatePlot);

@@ -41,28 +41,28 @@
                 </div>
                 <div class="row">
                     <div class="col-3">
-                        <button class="btn btn-dark" onclick="toggleMovement()">Start/stop</button>
+                        <button class="btn btn-dark border-white" onclick="toggleMovement()">Start/stop</button>
                     </div>
                     <div class="col-4" id="speed-control">
                         <div class="row">
                             <span class="speed-label">Speed: </span>
                         </div>
                         <div>
-                            <button class="btn btn-dark" id="slow-down" onclick="decreaseSpeed()">&#9660</button>
-                            <button class="btn btn-dark" id="speed-up" onclick="increaseSpeed()">&#9650</button>
+                            <button class="btn btn-dark border-white" id="speed-btn" onclick="increaseSpeed()">&#9650</button>
+                            <button class="btn btn-dark border-white" id="speed-btn" onclick="decreaseSpeed()">&#9660</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container-emergency" id="emergency">
                 <!-- Contacting SOS (911) -->
-                <button class="emergency-button" onclick="callEmergency()">Call 911</button>
-                <button class="emergency-button" onclick="findNearestExit()">Find Nearest Exit</button>
+                <button class="btn btn-danger" id="emergency-btn" onclick="callEmergency()">Call 911</button>
+                <button class="btn btn-danger" id="emergency-btn" onclick="findNearestExit()">Find Nearest Exit</button>
             </div>
         </div>
 
         <div class="row" id="bottom-row">
-            <div class="container" id="navigation-info">
+            <div class="col-4" id="navigation-info">
 
                 <!-- Start Gates -->
                 <div class="card" id="start-gates">
@@ -116,14 +116,15 @@
 
                     <!-- Start Button -->
                     <div class="col-4">
-                        <button class="btn btn-secondary" onclick="StartNavigation()">Start</button>
+                        <button class="btn btn-secondary" onclick="startNavigation()">Start</button>
                     </div>
                 </div>
             </div>
-            <div class="container-map" id="map">
-                <!-- Map will render here -->
-                
+            <div class="col-8" id="nav-display">
+                <div class="container" id="map"></div>
+                <div class="container" id="other-info"></div>
             </div>
+            
         </div>
     </div>
 
