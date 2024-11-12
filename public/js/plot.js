@@ -9,6 +9,9 @@ let speed = 0;
 // Lock Status
 let lock_status = 0;
 
+// Movement status
+let is_moving = false;
+
 function selectGate(id, isStartGate) {
     if (isStartGate) {
         if (selectedStartGate) {
@@ -149,7 +152,6 @@ function updatePlot() {
     Plotly.newPlot('map', data, layout);
 }
 
-
 function resetPlot() {
     selectedStartGate = null;
     selectedEndGate = null;
@@ -164,23 +166,65 @@ function increaseSpeed(){
     if (speed < 5) {
         speed = speed + 1;
     }
-    updateSpeed();
+    updateSpeedDisplay();
 }
 
 function decreaseSpeed(){
     if (speed > 0) {
         speed = speed - 1;
     }
-    updateSpeed();
+    updateSpeedDisplay();
 }
 
-function updateSpeed() {
+function updateSpeedDisplay() {
     let speed_display = document.getElementsByClassName("speed-label");
     speed_display[0].textContent = "Speed: " + speed + "mph";
 }
 
 function calculateDistance() {
+    const gatePositions = {
+        'gate-A': { x: 1, y: 4 },
+        'gate-B': { x: 1, y: 3 },
+        'gate-C': { x: 1, y: 2 },
+        'gate-D': { x: 1, y: 1 },
+        'stop-A': { x: 2, y: 4 },
+        'stop-B': { x: 2, y: 3 },
+        'stop-C': { x: 2, y: 2 },
+        'stop-D': { x: 2, y: 1 },
+        'gate-E': { x: 3, y: 4 },
+        'gate-F': { x: 3, y: 3 },
+        'gate-G': { x: 3, y: 2 },
+        'gate-H': { x: 3, y: 1 }
+    };
+
+    let totalDistance = 0;
+
+    function getDistance(point1, point2) {
+        return Math.sqrt(
+            Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2)
+        );
+    }
+
+    if (selectedStartGate && selectedRestStop) {
+        totalDistance += getDistance(gatePositions[selectedStartGate], gatePositions[selectedRestStop]);
+    }
+
+    if (selectedRestStop && selectedEndGate) {
+        totalDistance += getDistance(gatePositions[selectedRestStop], gatePositions[selectedEndGate]);
+    } else if (selectedStartGate && selectedEndGate && !selectedRestStop) {
+        totalDistance += getDistance(gatePositions[selectedStartGate], gatePositions[selectedEndGate]);
+    }
+    return totalDistance;
+
     
 }
+
+
+// function toggleMovement() {
+//     if(is_moving){
+//         is_moving = false;
+//         speed = 0;
+//     }
+// }
 
 document.addEventListener('DOMContentLoaded', updatePlot);

@@ -41,7 +41,8 @@
                 </div>
                 <div class="row">
                     <div class="col-3">
-                        <button class="btn btn-dark border-white" onclick="toggleMovement()">Start/stop</button>
+                        <button class="btn btn-dark border-white" onclick="toggleMovement()">Pause</button>
+                        <button class="btn btn-dark border-white" onclick="toggleMovement()">Resume</button>
                     </div>
                     <div class="col-4" id="speed-control">
                         <div class="row">
@@ -70,10 +71,10 @@
                         <b>Start Gates</b>
                     </div>
                     <div class="button-container">
-                        <button class="nav-button" id="gate-A" onclick="selectGate('gate-A', true)">Gate A</button>
-                        <button class="nav-button" id="gate-B" onclick="selectGate('gate-B', true)">Gate B</button>
-                        <button class="nav-button" id="gate-C" onclick="selectGate('gate-C', true)">Gate C</button>
-                        <button class="nav-button" id="gate-D" onclick="selectGate('gate-D', true)">Gate D</button>
+                        <button class="btn btn-dark border-black nav-button" id="gate-A" onclick="selectGate('gate-A', true)">Gate A</button>
+                        <button class="btn btn-dark border-black nav-button" id="gate-B" onclick="selectGate('gate-B', true)">Gate B</button>
+                        <button class="btn btn-dark border-black nav-button" id="gate-C" onclick="selectGate('gate-C', true)">Gate C</button>
+                        <button class="btn btn-dark border-black nav-button" id="gate-D" onclick="selectGate('gate-D', true)">Gate D</button>
                     </div>
                 </div>
 
@@ -83,10 +84,10 @@
                         <b>Rest Stops</b>
                     </div>
                     <div class="button-container">
-                        <button class="nav-button" id="stop-A" onclick="selectRestStop('stop-A')">Shake Shack</button>
-                        <button class="nav-button" id="stop-B" onclick="selectRestStop('stop-B')">Bathroom</button>
-                        <button class="nav-button" id="stop-C" onclick="selectRestStop('stop-C')">Help Desk</button>
-                        <button class="nav-button" id="stop-D" onclick="selectRestStop('stop-D')">Lounge</button>
+                        <button class="btn btn-dark border-black nav-button" id="stop-A" onclick="selectRestStop('stop-A')">Shake Shack</button>
+                        <button class="btn btn-dark border-black nav-button" id="stop-B" onclick="selectRestStop('stop-B')">Bathroom</button>
+                        <button class="btn btn-dark border-black nav-button" id="stop-C" onclick="selectRestStop('stop-C')">Help Desk</button>
+                        <button class="btn btn-dark border-black nav-button" id="stop-D" onclick="selectRestStop('stop-D')">Lounge</button>
                     </div>
                 </div>
 
@@ -96,10 +97,10 @@
                         <b>End Gates</b>
                     </div>
                     <div class="button-container">
-                        <button class="nav-button" id="gate-E" onclick="selectGate('gate-E', false)">Gate E</button>
-                        <button class="nav-button" id="gate-F" onclick="selectGate('gate-F', false)">Gate F</button>
-                        <button class="nav-button" id="gate-G" onclick="selectGate('gate-G', false)">Gate G</button>
-                        <button class="nav-button" id="gate-H" onclick="selectGate('gate-H', false)">Gate H</button>
+                        <button class="btn btn-dark border-black nav-button" id="gate-E" onclick="selectGate('gate-E', false)">Gate E</button>
+                        <button class="btn btn-dark border-black nav-button" id="gate-F" onclick="selectGate('gate-F', false)">Gate F</button>
+                        <button class="btn btn-dark border-black nav-button" id="gate-G" onclick="selectGate('gate-G', false)">Gate G</button>
+                        <button class="btn btn-dark border-black nav-button" id="gate-H" onclick="selectGate('gate-H', false)">Gate H</button>
                     </div>
                 </div>
 
@@ -121,8 +122,19 @@
                 </div>
             </div>
             <div class="col-8" id="nav-display">
+
+                <!-- Plot Container -->
                 <div class="container" id="map"></div>
-                <div class="container" id="other-info"></div>
+
+                <!-- Other Information Container -->
+                <div class="container" id="other-info">
+                    <div class="card" id="eta">
+                        <div class="card-body" id="eta-body">
+                            <!-- ETA body loads here -->
+                            <h2>ETA: </h2>
+                        </div>
+                    </div>
+                </div>
             </div>
             
         </div>

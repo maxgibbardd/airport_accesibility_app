@@ -164,19 +164,20 @@ body {
 }
 
 .nav-button {
-    background-color: black;
     color: white;
     border-radius: 5px;
-    border: background-color;
     padding: 5px 10px;
     margin: 0;
+    font-size: 12px;
     line-height: 1.5;
     vertical-align: middle;
     transition: background-color 0.3s;
+    width: 25%;
 }
 
 #rest-stops .nav-button {
     height: 65px;
+    width: 100%;
 }
 
 #speed-btn {
@@ -218,5 +219,11 @@ body {
     height: 100%;
     border: 1px solid black;
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
+}
+
+#eta {
+    background-color:  rgb(223, 223, 223);
+    color: black;
+    width: 100%;
 }
