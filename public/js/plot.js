@@ -160,6 +160,39 @@ function resetPlot() {
     updatePlot();
 }
 
+function toggleMovement(){
+    var button = document.querySelector('.robot-start-stop-button');
+    if (button.innerHTML === 'Start'){
+        button.innerHTML = 'Stop';
+        button.style.backgroundColor = '#ed3d3d';
+    } else {
+        button.innerHTML = 'Start';
+        button.style.backgroundColor = '#2da745';
+    }
+}
+
+function toggleLock(){
+    var button = document.querySelector('.robot-lock-unlock-button');
+    if (button.innerHTML === 'Unlocked'){
+        button.innerHTML = 'Locked'
+        button.style.backgroundColor = '#b7b7c2';
+    } else {
+        button.innerHTML = 'Unlocked';
+        button.style.backgroundColor = '#9ac2fe';
+    }
+}
+
+function toggleSiren(){
+    var button = document.querySelector('.robot-siren-button');
+    if (button.innerHTML === 'Off'){
+        button.innerHTML = 'On'
+        button.style.backgroundColor = '#ffaf0f';
+    } else {
+        button.innerHTML = 'Off';
+        button.style.backgroundColor = '#b7b7c2';
+    }
+}
+
 function increaseSpeed(){
     if (speed < 5) {
         speed = speed + 1;

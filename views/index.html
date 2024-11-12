@@ -40,8 +40,9 @@
                     <h3>Robot Communication</h3>
                 </div>
                 <div class="row">
-                    <div class="col-3">
-                        <button class="btn btn-dark border-white" onclick="toggleMovement()">Start/stop</button>
+                    <div class="col-4">
+                        <button class="robot-start-stop-button" onclick="toggleMovement()">Start</button>
+                        <button class="robot-lock-unlock-button" onclick="toggleLock()">Unlocked</button>
                     </div>
                     <div class="col-4" id="speed-control">
                         <div class="row">
@@ -50,6 +51,14 @@
                         <div>
                             <button class="btn btn-dark border-white" id="speed-btn" onclick="increaseSpeed()">&#9650</button>
                             <button class="btn btn-dark border-white" id="speed-btn" onclick="decreaseSpeed()">&#9660</button>
+                        </div>
+                    </div>
+                    <div class="col-4" id="siren-control">
+                        <div class="row">
+                            <span class="siren-label">Siren Blare: </span>
+                        </div>
+                        <div>
+                            <button class="robot-siren-button" onclick="toggleSiren()">Off</button>
                         </div>
                     </div>
                 </div>

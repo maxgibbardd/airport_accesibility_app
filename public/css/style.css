@@ -69,24 +69,53 @@ body {
     justify-content: flex-start;
 }
 
-#emergency {
-    padding-top: 10px;
-    width: 36.5%;
-    margin: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(69, 69, 69);
-}
+
 
 .robot-start-stop-button {
-    background-color: #fefefe; 
+    background-color: #2da745; 
     border: 1px solid black;
     color: rgb(0, 0, 0);
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-bottom: 5px;
+    width: 110px;
+    height: 50px;
+}
+
+.robot-lock-unlock-button {
+    background-color: #9ac2fe; 
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+    width: 110px;
+    height: 50px;
+}
+
+.siren-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.robot-siren-button {
+    background-color: #b7b7c2; 
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+    width: 110px;
+    height: 50px;
 }
 
 .robot-button:hover{
@@ -107,17 +136,7 @@ body {
     background-color: rgb(149, 90, 164);
 }
 
-.robot-start-stop-button {
-    background-color: #fefefe; 
-    border: 1px solid black;
-    color: rgb(0, 0, 0);
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-right: 5px; /* Space between buttons */
-}
+
 
 .speed-control {
     display: flex;
@@ -135,6 +154,15 @@ body {
     color: white;
     font-size: 16px;
     font-weight: bold;
+}
+
+#emergency {
+    padding-top: 10px;
+    width: 36.5%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(69, 69, 69);
 }
 
 #emergency-button{
