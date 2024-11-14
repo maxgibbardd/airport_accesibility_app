@@ -261,7 +261,7 @@ body {
     justify-content: center;
 }
 
-#eta {
+#eta, #distance {
     background-color:  rgb(223, 223, 223);
     color: black;
     width: 100%;

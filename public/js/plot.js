@@ -14,9 +14,8 @@ let lock_status = 0;
 // Movement status
 let is_moving = false;
 
-// ETA Card
-eta_card = document.getElementByID('eta');
-eta_body = document.getElementById('eta-body');
+// ETA Containers
+eta_container = document.getElementById('eta');
 
 function selectGate(id, isStartGate) {
     if (isStartGate) {
@@ -255,16 +254,20 @@ function calculateDistance() {
         totalDistance += getDistance(gatePositions[selectedStartGate], gatePositions[selectedEndGate]);
     }
 
+    totalDistance = Number(totalDistance.toFixed(1));
+
+    // Update Distance section
+    document.getElementById('distance-value').innerText = `${totalDistance} m`;
+
     // Calculate ETA if speed is greater than 0
     let etaText = "N/A";
     if (speed > 0) {
         const eta = totalDistance / speed;  // ETA in hours
         const etaMinutes = Math.round(eta * 60);  // Convert ETA to minutes
-        etaText = `${etaMinutes} minutes`;
-        
-        eta_body.innerHTML = `<h2>Distance:<h2> ${totalDistance}m<h2>\nETA:</h2> ${etaText}`;
+        etaText = `${etaMinutes} min`;
     }
-    else {
-        eta_body.innerHTML = `<h2>Distance:<h2> ${totalDistance}m`;
-    }
+
+    // Update ETA section
+    document.getElementById('eta-value').innerText = etaText;
 }
+
