@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', updatePlot);
+
 // Initialize variables to store selected start gates, rest stops, and end gates
 let selectedStartGate = null;
 let selectedRestStop = null; 
@@ -11,6 +13,10 @@ let lock_status = 0;
 
 // Movement status
 let is_moving = false;
+
+// ETA Card
+eta_card = document.getElementByID('eta');
+eta_body = document.getElementById('eta-body');
 
 function selectGate(id, isStartGate) {
     if (isStartGate) {
@@ -162,6 +168,39 @@ function resetPlot() {
     updatePlot();
 }
 
+function toggleMovement(){
+    var button = document.querySelector('.robot-start-stop-button');
+    if (button.innerHTML === 'Start'){
+        button.innerHTML = 'Stop';
+        button.style.backgroundColor = '#ed3d3d';
+    } else {
+        button.innerHTML = 'Start';
+        button.style.backgroundColor = '#2da745';
+    }
+}
+
+function toggleLock(){
+    var button = document.querySelector('.robot-lock-unlock-button');
+    if (button.innerHTML === 'Unlocked'){
+        button.innerHTML = 'Locked'
+        button.style.backgroundColor = '#b7b7c2';
+    } else {
+        button.innerHTML = 'Unlocked';
+        button.style.backgroundColor = '#9ac2fe';
+    }
+}
+
+function toggleSiren(){
+    var button = document.querySelector('.robot-siren-button');
+    if (button.innerHTML === 'Off'){
+        button.innerHTML = 'On'
+        button.style.backgroundColor = '#ffaf0f';
+    } else {
+        button.innerHTML = 'Off';
+        button.style.backgroundColor = '#b7b7c2';
+    }
+}
+
 function increaseSpeed(){
     if (speed < 5) {
         speed = speed + 1;
@@ -205,6 +244,7 @@ function calculateDistance() {
         );
     }
 
+    // Calculate total distance based on selected gates and rest stops
     if (selectedStartGate && selectedRestStop) {
         totalDistance += getDistance(gatePositions[selectedStartGate], gatePositions[selectedRestStop]);
     }
@@ -214,17 +254,17 @@ function calculateDistance() {
     } else if (selectedStartGate && selectedEndGate && !selectedRestStop) {
         totalDistance += getDistance(gatePositions[selectedStartGate], gatePositions[selectedEndGate]);
     }
-    return totalDistance;
 
-    
+    // Calculate ETA if speed is greater than 0
+    let etaText = "N/A";
+    if (speed > 0) {
+        const eta = totalDistance / speed;  // ETA in hours
+        const etaMinutes = Math.round(eta * 60);  // Convert ETA to minutes
+        etaText = `${etaMinutes} minutes`;
+        
+        eta_body.innerHTML = `<h2>Distance:<h2> ${totalDistance}m<h2>\nETA:</h2> ${etaText}`;
+    }
+    else {
+        eta_body.innerHTML = `<h2>Distance:<h2> ${totalDistance}m`;
+    }
 }
-
-
-// function toggleMovement() {
-//     if(is_moving){
-//         is_moving = false;
-//         speed = 0;
-//     }
-// }
-
-document.addEventListener('DOMContentLoaded', updatePlot);
